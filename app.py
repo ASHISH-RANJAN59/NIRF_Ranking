@@ -26,6 +26,7 @@ def fetch_college_details(college_name):
     college_details = df[df['Name'].str.contains(college_name, case=False, na=False)]
     
     if not college_details.empty:
+        college_details['Name'] = college_name
         return college_details
     else:
         return pd.DataFrame(columns=columns)
